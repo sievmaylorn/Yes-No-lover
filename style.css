@@ -1,0 +1,100 @@
+    /* Global box-sizing for consistent layout */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ensure body takes full viewport height */
+        background-color: #f0f0f0; /* Optional: add a background color */
+        overflow: hidden; /* Hide scrollbars that might appear when button is at edge */
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background-color: white; /* Optional: add a background to the box */
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 450px; /* Limit box width for better presentation */
+        width: 90%; /* Responsive width */
+        text-align: center;
+    }
+
+    .content-wrapper {
+        margin-bottom: 30px; /* Space between content and buttons */
+    }
+
+    h2 {
+        color: rgb(252, 111, 134);
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 20px; /* Space below heading */
+    }
+
+    .box img {
+        max-width: 100%; /* Make image responsive */
+        height: auto;
+        display: block; /* Remove extra space below image */
+        border-radius: 10px; /* Optional: rounded corners for the image */
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 25px; /* Space between buttons */
+        width: 100%;
+    }
+
+    #no, #yes {
+        padding: 12px 25px; /* Adjusted padding */
+        border: 0;
+        font-size: 22px; /* Adjusted font size */
+        color: white;
+        cursor: pointer;
+        transition: top 0.2s linear, left 0.2s linear; /* Smooth transition for 'No' button movement */
+        border-radius: 10px;
+        min-width: 100px; /* Ensure buttons have a minimum width */
+        font-family: inherit; /* Inherit font from body */
+    }
+
+    #no {
+        background-color: red;
+        /* Position will be set to absolute by JavaScript */
+    }
+    #yes {
+        background-color: blue;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* duration and easing */
+    }
+
+    #yes:hover {
+        background-color: rgb(247, 131, 150);
+        transform: scale(1.3); /* scale up by 10% on hover */
+    }
+
+
+    @media (max-width: 450px) {
+        h2 {
+            font-size: 25px;
+        }
+        #no, #yes {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .button-group {
+            gap: 15px;
+        }
+    }
